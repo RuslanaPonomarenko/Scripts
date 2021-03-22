@@ -1,0 +1,53 @@
+TIME WHEN THE SCRIPT WAS RUN:	 Sun Mar 21 03:19:02 PDT 2021
+
+---------------------------Operating system information-------------------------
+
+OPERATING SYSTEM:	GNU/Linux
+DISTRIBUTION:		Ubuntu
+VERSION:		18.04 LTS (Bionic Beaver)
+KERNEL:			4.15.0-20-generic
+
+-------------------------------Network information------------------------------
+
+NETWORK ROUTING TABLE
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+0.0.0.0         192.168.157.2   0.0.0.0         UG        0 0          0 ens33
+169.254.0.0     0.0.0.0         255.255.0.0     U         0 0          0 ens33
+192.168.157.0   0.0.0.0         255.255.255.0   U         0 0          0 ens33
+
+IP ADDRESS INFORMATION
+
+ens33: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.157.131  netmask 255.255.255.0  broadcast 192.168.157.255
+        inet6 fe80::c415:6485:85ca:e67d  prefixlen 64  scopeid 0x20<link>
+        ether 00:0c:29:da:de:ab  txqueuelen 1000  (Ethernet)
+        RX packets 15887  bytes 18895624 (18.8 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 5773  bytes 681159 (681.1 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 1356  bytes 137983 (137.9 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1356  bytes 137983 (137.9 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+
+FIREWALL CONFIGURATION
+
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination         
+DROP       all  --  10.10.10.10          anywhere            
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination         
+DROP       all  --  10.10.10.10          anywhere            
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination         
+DROP       all  --  10.10.10.10          anywhere            

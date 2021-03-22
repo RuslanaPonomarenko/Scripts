@@ -1,0 +1,72 @@
+TIME WHEN THE SCRIPT WAS RUN:	 Sun Mar 21 03:19:28 PDT 2021
+UPTIME:				 up 2 hours, 2 minutes
+
+---------------------------------User information-------------------------------
+
+CURENT USERS
+
+NAME     LINE         TIME             COMMENT
+ruslana  :0           2021-03-21 01:23 (:0)
+
+RECENT LOGINS
+
+ruslana  :0           :0               Sun Mar 21 01:23   still logged in
+reboot   system boot  4.15.0-20-generi Sun Mar 21 01:17   still running
+ruslana  :0           :0               Sat Mar 20 03:54 - crash  (21:22)
+reboot   system boot  4.15.0-20-generi Sat Mar 20 03:52   still running
+ruslana  :0           :0               Sat Mar 20 01:35 - crash  (02:16)
+reboot   system boot  4.15.0-20-generi Sat Mar 20 01:33   still running
+ruslana  :0           :0               Fri Mar 19 03:01 - crash  (22:32)
+reboot   system boot  4.15.0-20-generi Fri Mar 19 02:52   still running
+ruslana  :0           :0               Wed Mar 17 01:22 - crash (2+01:29)
+reboot   system boot  4.15.0-20-generi Wed Mar 17 01:19   still running
+ruslana  pts/1        192.168.157.1    Tue Mar 16 02:30 - crash  (22:48)
+ruslana  :0           :0               Tue Mar 16 01:41 - crash  (23:37)
+reboot   system boot  4.15.0-20-generi Tue Mar 16 01:39   still running
+ruslana  :0           :0               Fri Mar 12 05:15 - crash (3+19:23)
+reboot   system boot  4.15.0-20-generi Fri Mar 12 05:14   still running
+ruslana  :0           :0               Thu Mar 11 04:18 - crash (1+00:56)
+reboot   system boot  4.15.0-20-generi Thu Mar 11 03:54   still running
+
+wtmp begins Thu Mar 11 03:54:23 2021
+
+-------------------------TOP-10 processes by RAM/CPU usage----------------------
+   PID   PPID CMD                         %MEM %CPU
+  3511      1 /usr/lib/firefox/firefox -n  7.5 13.5
+  3564   3511 /usr/lib/firefox/firefox -c  6.7 10.4
+  2109   1974 /usr/bin/gnome-shell         4.6  3.7
+  2301   1974 /usr/bin/gnome-software --g  3.8  0.2
+  1439   1420 /usr/bin/gnome-shell         3.3  0.2
+  3845   3511 /usr/lib/firefox/firefox -c  2.1  0.1
+  1931   1929 /usr/lib/xorg/Xorg vt2 -dis  1.8  1.4
+  2345   1911 /usr/lib/evolution/evolutio  1.6  0.0
+  2381   2345 /usr/lib/evolution/evolutio  1.5  0.0
+
+--------------------------------Open TCP/UDP ports------------------------------
+Netid  State    Recv-Q   Send-Q      Local Address:Port      Peer Address:Port  
+udp    UNCONN   24576    0           127.0.0.53%lo:53             0.0.0.0:*     
+udp    UNCONN   19584    0                 0.0.0.0:68             0.0.0.0:*     
+udp    UNCONN   0        0                 0.0.0.0:45310          0.0.0.0:*     
+udp    UNCONN   0        0                 0.0.0.0:631            0.0.0.0:*     
+udp    UNCONN   38400    0                 0.0.0.0:5353           0.0.0.0:*     
+udp    UNCONN   0        0                    [::]:49920             [::]:*     
+udp    UNCONN   9216     0                    [::]:5353              [::]:*     
+tcp    LISTEN   0        128         127.0.0.53%lo:53             0.0.0.0:*     
+tcp    LISTEN   0        128               0.0.0.0:22             0.0.0.0:*     
+tcp    LISTEN   0        5               127.0.0.1:631            0.0.0.0:*     
+tcp    LISTEN   0        128                  [::]:22                [::]:*     
+tcp    LISTEN   0        5                   [::1]:631               [::]:*     
+
+-----------------------------------Memory usage---------------------------------
+
+VIRTUAL MEMORY USAGE
+
+procs -----------------------memory---------------------- ---swap-- -----io---- -system-- --------cpu--------
+ r  b         swpd         free         buff        cache   si   so    bi    bo   in   cs  us  sy  id  wa  st
+ 1  0            0      1290616        91428       998236    0    0    59    20   97  186   3   3  92   2   0
+
+USAGE OF DISC SPACE
+
+              total        used        free      shared  buff/cache   available
+Mem:           3.8G        1.6G        1.2G         22M        1.0G        2.2G
+Swap:          1.2G          0B        1.2G

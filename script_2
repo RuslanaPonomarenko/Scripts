@@ -1,0 +1,44 @@
+#!/bin/bash
+
+function menu(){
+	echo -e "\n----------------------------------------Menu------------------------------------"
+	echo "1.Operating system information"
+	echo "2.Network information"
+	echo "3.Exit"
+}
+
+
+function os_inf(){
+	echo -e "\n---------------------------Operating system information-------------------------"
+	echo -e "\nOPERATING SYSTEM:\t"$(uname -o)
+	echo -e "DISTRIBUTION:\t\t"$(grep -Po '(?<=\bNAME=).*' /etc/os-release | cut -d '"' -f2)
+	echo -e "VERSION:\t\t"$(grep -Po '(?<=\bVERSION=).*' /etc/os-release | cut -d '"' -f2)
+	echo -e "KERNEL:\t\t\t"$(uname -r)	
+} 
+
+function netw_inf(){
+	echo -e "\n-------------------------------Network information------------------------------"
+	echo -e "\nNETWORK ROUTING TABLE\n"; netstat -nr
+	echo -e "\nIP ADDRESS INFORMATION\n"; ifconfig
+	echo -e "\nFIREWALL CONFIGURATION\n"; sudo iptables -L
+}
+
+function input(){
+	echo ""
+	read -p "Select a command [1-3] " comand
+	case $comand in
+		1)	os_inf | tee -a $name_f;;
+		2)	netw_inf | tee -a $name_f;;
+		3)	echo "Writing to a file...."; exit 0 ;;
+	esac
+}
+
+menu
+read -p "Enter a file name:" name_f
+echo -e "TIME WHEN THE SCRIPT WAS RUN:\t" $(date) > $name_f
+
+while true
+do
+ 	input
+done
+

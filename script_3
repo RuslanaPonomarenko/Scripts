@@ -1,0 +1,56 @@
+#!/bin/bash
+
+function menu(){
+	echo -e "\n----------------------------------------Menu------------------------------------"
+	echo "1.User information"
+	echo "2.TOP-10 processes by RAM/CPU usage"
+	echo "3.Open TCP/UDP ports"
+	echo "4.Memory usage"
+	echo "5.Exit"
+}
+
+
+function user_inf(){
+	echo -e "\n---------------------------------User information-------------------------------"
+	echo -e "\nCURENT USERS\n"; who -H
+	echo -e "\nRECENT LOGINS\n"; last
+} 
+
+function top_10(){
+	echo -e "\n-------------------------TOP-10 processes by RAM/CPU usage----------------------"
+	ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head
+}
+
+function open_ports(){
+	echo -e "\n--------------------------------Open TCP/UDP ports------------------------------"
+	ss -tulpn
+}
+
+function mem_usage(){
+	echo -e "\n-----------------------------------Memory usage---------------------------------"
+	echo -e "\nVIRTUAL MEMORY USAGE\n"; vmstat -w
+	echo -e "\nUSAGE OF DISC SPACE\n"; free -h
+}
+
+function input(){
+	echo ""
+	read -p "Select a command [1-5] " comand
+	case $comand in
+		1)	user_inf | tee -a $name_f;;
+		2)	top_10 | tee -a $name_f;;
+		3)	open_ports | tee -a $name_f;;
+		4)	mem_usage | tee -a $name_f;;
+		5)	echo "Writing to a file...."; exit 0 ;;
+	esac
+}
+
+menu
+read -p "Enter a file name:" name_f
+echo -e "TIME WHEN THE SCRIPT WAS RUN:\t" $(date) > $name_f
+echo -e "UPTIME:\t\t\t\t" $(uptime -p) >> $name_f
+
+while true
+do
+ 	input
+done
+
